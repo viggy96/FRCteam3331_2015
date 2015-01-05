@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import org.usfirst.frc.team3331.robot.commands.telopDriveCommand;
+import org.usfirst.frc.team3331.robot.commands.teleopDriveCommand;
 import org.usfirst.frc.team3331.robot.subsystems.DriveSubsystem;
 
 /**
@@ -21,7 +21,7 @@ public class Robot extends IterativeRobot {
 	public static final DriveSubsystem driveSubsystem = new DriveSubsystem(); 
 	public static OI oi;
 
-    Command autonomousCommand, telopCommand;
+    Command autonomousCommand, teleopCommand;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -30,7 +30,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
 		oi = new OI();
         autonomousCommand = null;
-        telopCommand = new telopDriveCommand();
+        teleopCommand = new teleopDriveCommand();
     }
 	
 	public void disabledPeriodic() {
@@ -50,7 +50,7 @@ public class Robot extends IterativeRobot {
 
     public void teleopInit() {
         if (autonomousCommand != null) autonomousCommand.cancel();
-        telopCommand.start();
+        teleopCommand.start();
     }
 
     /**

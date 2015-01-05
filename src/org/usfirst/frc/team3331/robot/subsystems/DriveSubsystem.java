@@ -1,7 +1,7 @@
 package org.usfirst.frc.team3331.robot.subsystems;
 
 import org.usfirst.frc.team3331.robot.RobotMap;
-import org.usfirst.frc.team3331.robot.commands.telopDriveCommand;
+import org.usfirst.frc.team3331.robot.commands.teleopDriveCommand;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -15,7 +15,7 @@ public class DriveSubsystem extends Subsystem {
     Joystick gamepad = RobotMap.gamepad;
     
     public void initDefaultCommand() {
-        setDefaultCommand(new telopDriveCommand());
+        setDefaultCommand(new teleopDriveCommand());
     }
     
     public void init() {
@@ -26,7 +26,7 @@ public class DriveSubsystem extends Subsystem {
     	drivetrain.tankDrive(leftValue, rightValue);
     }
     
-    public void telopDrive() {
+    public void teleopDrive() {
     	drivetrain.tankDrive(-gamepad.getRawAxis(2), -gamepad.getRawAxis(5));
     }
 }
