@@ -9,20 +9,19 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class autoDriveCommand extends Command {
-	DriveSubsystem driveSubsystem = Robot.driveSubsystem;
-	
+
     public autoDriveCommand() {
-        requires(driveSubsystem);
+        requires(Robot.DriveSubsystem);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	driveSubsystem.init();
+    	Robot.DriveSubsystem.init();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	driveSubsystem.autoDrive(1, 1);
+    	Robot.DriveSubsystem.autoDrive(1, 1);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -32,7 +31,7 @@ public class autoDriveCommand extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	driveSubsystem.init();
+    	Robot.DriveSubsystem.init();
     }
 
     // Called when another command which requires one or more of the same
