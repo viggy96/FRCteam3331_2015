@@ -11,23 +11,21 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class DriveSubsystem extends Subsystem {
-    RobotDrive drivetrain = RobotMap.drivetrain;
-    Joystick gamepad = RobotMap.gamepad;
     
     public void initDefaultCommand() {
         setDefaultCommand(new teleopDriveCommand());
     }
     
     public void init() {
-    	drivetrain.tankDrive(0, 0);
+    	RobotMap.drivetrain.tankDrive(0, 0);
     }
     
     public void autoDrive(double leftValue, double rightValue) {
-    	drivetrain.tankDrive(leftValue, rightValue);
+    	RobotMap.drivetrain.tankDrive(leftValue, rightValue);
     }
     
     public void teleopDrive() {
-    	drivetrain.tankDrive(-gamepad.getRawAxis(2), -gamepad.getRawAxis(5));
+    	RobotMap.drivetrain.tankDrive(-RobotMap.gamepad.getRawAxis(2), -RobotMap.gamepad.getRawAxis(5));
     }
 }
 
