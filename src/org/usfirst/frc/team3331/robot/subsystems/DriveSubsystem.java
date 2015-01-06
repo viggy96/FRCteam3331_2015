@@ -2,14 +2,8 @@ package org.usfirst.frc.team3331.robot.subsystems;
 
 import org.usfirst.frc.team3331.robot.RobotMap;
 import org.usfirst.frc.team3331.robot.commands.teleopDriveCommand;
-
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-/**
- *
- */
 public class DriveSubsystem extends Subsystem {
     
     public void initDefaultCommand() {
@@ -25,7 +19,9 @@ public class DriveSubsystem extends Subsystem {
     }
     
     public void teleopDrive() {
-    	RobotMap.drivetrain.tankDrive(-RobotMap.gamepad.getRawAxis(2), -RobotMap.gamepad.getRawAxis(5));
+    	RobotMap.drivetrain.mecanumDrive_Polar(RobotMap.gamepad.getRawAxis(RobotMap.leftStickY), RobotMap.gamepad.getRawAxis(RobotMap.leftStickX), RobotMap.gamepad.getRawAxis(RobotMap.rightStickX));
+    	// magnitude, direction, twist (Y, X, Z)
     }
+    
 }
 
