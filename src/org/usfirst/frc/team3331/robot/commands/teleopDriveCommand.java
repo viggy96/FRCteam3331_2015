@@ -1,13 +1,8 @@
 package org.usfirst.frc.team3331.robot.commands;
 
 import org.usfirst.frc.team3331.robot.Robot;
-import org.usfirst.frc.team3331.robot.subsystems.DriveSubsystem;
-
 import edu.wpi.first.wpilibj.command.Command;
 
-/**
- *
- */
 public class teleopDriveCommand extends Command {
 	
     public teleopDriveCommand() {
