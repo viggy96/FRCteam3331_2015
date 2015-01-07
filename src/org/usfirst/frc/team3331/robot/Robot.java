@@ -25,7 +25,7 @@ public class Robot extends IterativeRobot {
 
     /**
      * This function is run when the robot is first started up and should be
-     * used for any initialisation code.
+     * used for any initialisation code. 
      */
     public void robotInit() {
 		oi = new OI();
