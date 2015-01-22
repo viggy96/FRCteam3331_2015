@@ -19,7 +19,9 @@ public class DriveSubsystem extends Subsystem {
     }
     
     public void teleopDrive() {
-    	RobotMap.drivetrain.mecanumDrive_Polar(RobotMap.gamepad.getRawAxis(RobotMap.leftStickY), RobotMap.gamepad.getRawAxis(RobotMap.leftStickX), RobotMap.gamepad.getRawAxis(RobotMap.rightStickX));
+    	RobotMap.drivetrain.mecanumDrive_Polar(RobotMap.gamepad.getRawAxis(RobotMap.leftStickY), 
+    											RobotMap.gamepad.getRawAxis(RobotMap.leftStickX), 
+    											RobotMap.gamepad.getRawAxis(RobotMap.rightStickX));
     	// magnitude, direction, twist (Y, X, Z)
     }
     
