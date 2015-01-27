@@ -1,5 +1,6 @@
 package org.usfirst.frc.team3331.robot;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 
@@ -13,7 +14,8 @@ public class RobotMap {
 	public static int autoDriveTime = 5;
     
 	public static RobotDrive drivetrain = new RobotDrive(0, 2, 3, 4);
-    
+    public static DoubleSolenoid solenoid1 = new DoubleSolenoid (1,2);
+    public static DoubleSolenoid solenoid2 = new DoubleSolenoid (3,4);
     public static Joystick gamepad = new Joystick(1);
     public static int leftStickX = 0;
     public static int leftStickY = 1;

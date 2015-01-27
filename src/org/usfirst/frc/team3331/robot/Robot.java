@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team3331.robot.commands.teleopDriveCommand;
-import org.usfirst.frc.team3331.robot.subsystems.DriveSubsystem;
+import org.usfirst.frc.team3331.robot.subsystems.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -18,6 +18,8 @@ import org.usfirst.frc.team3331.robot.subsystems.DriveSubsystem;
 public class Robot extends IterativeRobot {
 
 	public static final DriveSubsystem DriveSubsystem = new DriveSubsystem(); 
+	public static final PneumaticSubsystem PneumaticSubsystem = new PneumaticSubsystem();
+	
 	public static OI oi;
 
     Command autonomousCommand, teleopCommand;
