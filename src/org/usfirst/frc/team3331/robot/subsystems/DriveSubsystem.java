@@ -14,15 +14,31 @@ public class DriveSubsystem extends Subsystem {
     	RobotMap.drivetrain.tankDrive(0, 0);
     }
     
-    public void autoDrive(double leftValue, double rightValue) {
-    	RobotMap.drivetrain.tankDrive(leftValue, rightValue);
+    public void autoDrive_Cartesian(double x, double y, double rotation) {
+    	RobotMap.drivetrain.mecanumDrive_Cartesian(x, y, rotation, 0.0);
+    }
+    
+    public void autoDrive_Polar(double magnitude, double direction, double rotation) {
+    	RobotMap.drivetrain.mecanumDrive_Polar(magnitude, direction, rotation);
     }
     
     public void teleopDrive() {
-    	RobotMap.drivetrain.mecanumDrive_Polar(RobotMap.gamepad.getRawAxis(RobotMap.leftStickY), 
-    											RobotMap.gamepad.getRawAxis(RobotMap.leftStickX), 
-    											RobotMap.gamepad.getRawAxis(RobotMap.rightStickX));
-    	// magnitude, direction, twist (Y, X, Z)
+    	double axes[] = normaliseAxes();
+    	RobotMap.drivetrain.mecanumDrive_Cartesian(axes[0], axes[1], axes[2], 0.0);
+    	// X, Y, rotation, gyroAngle
+    }
+    
+    private double[] normaliseAxes() {
+    	double axes[] = new double[3];
+    	
+    	double x = RobotMap.gamepad.getRawAxis(RobotMap.leftStickX), y = RobotMap.gamepad.getRawAxis(RobotMap.leftStickY);
+    	double rotation = RobotMap.gamepad.getRawAxis(RobotMap.rightStickX);
+    	
+    	axes[0] = Math.copySign(Math.pow(x, 2), x);
+    	axes[1] = Math.copySign(Math.pow(y, 2), y);
+    	axes[2] = Math.copySign(Math.pow(rotation,  2),  rotation);
+    	
+    	return axes;
     }
     
 }

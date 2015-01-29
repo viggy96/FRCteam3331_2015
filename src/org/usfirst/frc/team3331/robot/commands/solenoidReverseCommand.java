@@ -7,24 +7,20 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class solenoidForward extends Command {
+public class solenoidReverseCommand extends Command {
 
-    public solenoidForward() {
-        requires(Robot.PneumaticSubsystem);
-        
-    	// Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+    public solenoidReverseCommand() {
+    	requires(Robot.PneumaticSubsystem);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.PneumaticSubsystem.init();
- 
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.PneumaticSubsystem.solenoidForward();
+    	Robot.PneumaticSubsystem.solenoidReverse();
     }
 
     // Make this return true when this Command no longer needs to run execute()
