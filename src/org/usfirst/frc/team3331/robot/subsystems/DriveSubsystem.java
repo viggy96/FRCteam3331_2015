@@ -36,7 +36,7 @@ public class DriveSubsystem extends Subsystem {
     	
     	axes[0] = Math.copySign(Math.pow(x, 2), x);
     	axes[1] = Math.copySign(Math.pow(y, 2), y);
-    	axes[2] = Math.copySign(Math.pow(rotation,  2),  rotation);
+    	axes[2] = Math.copySign(Math.pow(rotation,  2),  rotation); 
     	
     	return axes;
     }
