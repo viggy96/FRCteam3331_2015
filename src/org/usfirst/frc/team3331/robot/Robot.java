@@ -19,6 +19,7 @@ public class Robot extends IterativeRobot {
 
 	public static final DriveSubsystem DriveSubsystem = new DriveSubsystem(); 
 	public static final PneumaticSubsystem PneumaticSubsystem = new PneumaticSubsystem();
+	public static final ConveyorSubsystem ConveyorSubsystem = new ConveyorSubsystem();
 	
 	public static OI oi;
 
