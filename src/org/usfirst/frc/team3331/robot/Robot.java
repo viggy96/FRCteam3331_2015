@@ -1,10 +1,11 @@
-
 package org.usfirst.frc.team3331.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+
+import org.usfirst.frc.team3331.robot.commands.autoCommandGroup;
 import org.usfirst.frc.team3331.robot.commands.teleopDriveCommand;
 import org.usfirst.frc.team3331.robot.subsystems.*;
 
@@ -31,7 +32,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
-        autonomousCommand = null;
+        autonomousCommand = new autoCommandGroup();
         teleopCommand = new teleopDriveCommand();
     }
 	

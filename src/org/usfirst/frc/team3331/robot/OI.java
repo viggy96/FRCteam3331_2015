@@ -12,11 +12,16 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {
     // Button button = new JoystickButton(stick, buttonNumber);
 	Button rightButton = new JoystickButton(RobotMap.gamepad, 5),
-			leftButton = new JoystickButton(RobotMap.gamepad, 6);
+			leftButton = new JoystickButton(RobotMap.gamepad, 6),
+			rightTrigger = new JoystickButton(RobotMap.gamepad, 7), 
+			leftTrigger = new JoystickButton(RobotMap.gamepad, 8);
 	
 	public OI() {
-		rightButton.whenPressed(new solenoidForwardCommand());
-		leftButton.whenPressed(new solenoidReverseCommand());
+		rightButton.whenPressed(new solenoidReverseCommand());
+		leftButton.whenPressed(new solenoidForwardCommand());
+		
+		rightTrigger.whenPressed(new conveyorCommand(-1));
+		leftTrigger.whenPressed(new conveyorCommand(1));
 	}
     // button.whenPressed(new ExampleCommand());
     // button.whileHeld(new ExampleCommand());

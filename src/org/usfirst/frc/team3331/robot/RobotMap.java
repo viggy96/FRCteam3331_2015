@@ -1,5 +1,6 @@
 package org.usfirst.frc.team3331.robot;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Joystick;
@@ -30,4 +31,6 @@ public class RobotMap {
     
     public static final Jaguar conveyorMotor1 = new Jaguar(4);
     public static final Jaguar conveyorMotor2 = new Jaguar(5);
+    
+    public static final DigitalInput liftSwitch = new DigitalInput(0);
 }
