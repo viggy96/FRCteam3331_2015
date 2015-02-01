@@ -3,6 +3,7 @@ package org.usfirst.frc.team3331.robot.subsystems;
 import org.usfirst.frc.team3331.robot.RobotMap;
 import org.usfirst.frc.team3331.robot.commands.conveyorCommand;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -11,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class ConveyorSubsystem extends Subsystem {
     
     public void initDefaultCommand() {
+    	setDefaultCommand(new conveyorCommand(0));
     }
     
     public void init() {
@@ -21,6 +23,11 @@ public class ConveyorSubsystem extends Subsystem {
     public void conveyor(int direction) {
     	RobotMap.conveyorMotor1.set(direction);
     	RobotMap.conveyorMotor2.set(direction);
+    	
+    	if (RobotMap.liftSwitch.get()) {
+    		RobotMap.gamepad.setRumble(Joystick.RumbleType.kLeftRumble, 1);
+    		RobotMap.gamepad.setRumble(Joystick.RumbleType.kRightRumble, 1);
+    	}
     }
     
     public void autoConveyorUp(int stage) {

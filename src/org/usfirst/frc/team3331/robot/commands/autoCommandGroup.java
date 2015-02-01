@@ -16,7 +16,7 @@ public class autoCommandGroup extends CommandGroup {
     	addSequential(new solenoidReverseCommand());
     	addSequential(new autoStartLiftCommand());
     	addSequential(new autoFinishLiftCommand());
-    	addSequential(new autoLowerCommand());
+    	addSequential(new autoLowerLiftCommand());
     	
         // To run multiple commands at the same time,
         // use addParallel()

@@ -6,9 +6,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class autoLowerCommand extends Command {
+public class autoLowerLiftCommand extends Command {
 
-    public autoLowerCommand() {
+    public autoLowerLiftCommand() {
         requires(Robot.ConveyorSubsystem);
     }
 
