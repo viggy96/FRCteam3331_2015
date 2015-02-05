@@ -26,8 +26,8 @@ public class RobotMap {
     public static final Joystick gamepad = new Joystick(1);
     public static final int leftStickX = 0;
     public static final int leftStickY = 1;
-    public static final int rightStickX = 2;
-    public static final int rightStickY = 3;
+    public static final int rightStickX = 4;
+    public static final int rightStickY = 5;
     
     public static final Jaguar conveyorMotor1 = new Jaguar(4);
     public static final Jaguar conveyorMotor2 = new Jaguar(5);

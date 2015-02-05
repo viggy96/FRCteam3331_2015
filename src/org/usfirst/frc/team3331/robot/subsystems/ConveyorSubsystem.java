@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class ConveyorSubsystem extends Subsystem {
     
     public void initDefaultCommand() {
-    	setDefaultCommand(new conveyorCommand(0));
+    	setDefaultCommand(new conveyorCommand());
     }
     
     public void init() {
@@ -20,9 +20,16 @@ public class ConveyorSubsystem extends Subsystem {
     	RobotMap.conveyorMotor2.set(0);
     }
     
-    public void conveyor(int direction) {
-    	RobotMap.conveyorMotor1.set(direction);
-    	RobotMap.conveyorMotor2.set(direction);
+    public void conveyor() {
+    	if (RobotMap.gamepad.getRawAxis(2) != 0) {
+    			RobotMap.conveyorMotor1.set(RobotMap.gamepad.getRawAxis(2));
+    			RobotMap.conveyorMotor2.set(RobotMap.gamepad.getRawAxis(2));
+    	}
+    	
+    	if (RobotMap.gamepad.getRawAxis(3) != 0) {
+    		RobotMap.conveyorMotor1.set(-RobotMap.gamepad.getRawAxis(3));
+    		RobotMap.conveyorMotor2.set(-RobotMap.gamepad.getRawAxis(3));
+    	}
     	
     	if (RobotMap.liftSwitch.get()) {
     		RobotMap.gamepad.setRumble(Joystick.RumbleType.kLeftRumble, 1);

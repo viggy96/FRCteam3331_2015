@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class conveyorCommand extends Command {
 	int direction = 0;
 	
-    public conveyorCommand(int direction) {
+    public conveyorCommand() {
     	requires(Robot.ConveyorSubsystem);
     	this.direction = direction;
     }
@@ -22,7 +22,7 @@ public class conveyorCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.ConveyorSubsystem.conveyor(direction);
+    	Robot.ConveyorSubsystem.conveyor();
     }
 
     // Make this return true when this Command no longer needs to run execute()
