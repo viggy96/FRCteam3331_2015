@@ -2,6 +2,7 @@ package org.usfirst.frc.team3331.robot.subsystems;
 
 import org.usfirst.frc.team3331.robot.RobotMap;
 import org.usfirst.frc.team3331.robot.commands.teleopDriveCommand;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class DriveSubsystem extends Subsystem {
@@ -24,7 +25,7 @@ public class DriveSubsystem extends Subsystem {
     
     public void teleopDrive() {
     	double axes[] = normaliseAxes();
-    	RobotMap.drivetrain.mecanumDrive_Cartesian(axes[0], axes[1], axes[2], 0.0);
+    	RobotMap.drivetrain.mecanumDrive_Cartesian(axes[0], axes[1], axes[2], 0);
     	// X, Y, rotation, gyroAngle
     }
     
