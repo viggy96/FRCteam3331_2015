@@ -16,7 +16,7 @@ public class DriveSubsystem extends Subsystem {
     }
     
     public void autoDrive_Cartesian(double x, double y, double rotation) {
-    	RobotMap.drivetrain.mecanumDrive_Cartesian(x, y, rotation, 0.0);
+    	RobotMap.drivetrain.mecanumDrive_Cartesian(x, y, rotation, 0);
     }
     
     public void autoDrive_Polar(double magnitude, double direction, double rotation) {

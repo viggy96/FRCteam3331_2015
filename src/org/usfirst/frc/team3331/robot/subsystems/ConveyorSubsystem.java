@@ -6,9 +6,6 @@ import org.usfirst.frc.team3331.robot.commands.conveyorCommand;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-/**
- *
- */
 public class ConveyorSubsystem extends Subsystem {
     
     public void initDefaultCommand() {

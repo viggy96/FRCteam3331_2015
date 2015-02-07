@@ -5,9 +5,6 @@ import org.usfirst.frc.team3331.robot.RobotMap;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-/**
- *
- */
 public class PneumaticSubsystem extends Subsystem {
     boolean state = false;
     
