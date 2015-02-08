@@ -24,7 +24,7 @@ public class RobotMap {
 	public static final DoubleSolenoid solenoid1 = new DoubleSolenoid (1, 2);
     public static final DoubleSolenoid solenoid2 = new DoubleSolenoid (3, 4);
 
-    public static final Joystick gamepad = new Joystick(1);
+    public static final Joystick gamepad = new Joystick(0);
     public static final int leftStickX = 0;
     public static final int leftStickY = 1;
     public static final int rightStickX = 4;

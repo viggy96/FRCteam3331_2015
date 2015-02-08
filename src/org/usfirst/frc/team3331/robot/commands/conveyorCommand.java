@@ -8,11 +8,9 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class conveyorCommand extends Command {
-	int direction = 0;
 	
     public conveyorCommand() {
     	requires(Robot.ConveyorSubsystem);
-    	this.direction = direction;
     }
 
     // Called just before this Command runs the first time

@@ -19,21 +19,15 @@ public class ConveyorSubsystem extends Subsystem {
     
     public void conveyor() {
     	if (RobotMap.gamepad.getRawAxis(2) != 0) {
-    			RobotMap.conveyorMotor1.set(RobotMap.gamepad.getRawAxis(2));
-    			RobotMap.conveyorMotor2.set(RobotMap.gamepad.getRawAxis(2));
+    		RobotMap.conveyorMotor1.set(RobotMap.gamepad.getRawAxis(2));
+    		RobotMap.conveyorMotor2.set(RobotMap.gamepad.getRawAxis(2));
     	}
-    	
-    	if (RobotMap.gamepad.getRawAxis(3) != 0) {
+    	if (RobotMap.gamepad.getRawAxis(3) != 0 ) {
     		RobotMap.conveyorMotor1.set(-RobotMap.gamepad.getRawAxis(3));
-    		RobotMap.conveyorMotor2.set(-RobotMap.gamepad.getRawAxis(3));
+    		RobotMap.conveyorMotor1.set(-RobotMap.gamepad.getRawAxis(3));
     	}
     	
     	if (RobotMap.gamepad.getRawAxis(2) == 0 && RobotMap.gamepad.getRawAxis(3) == 0) init();
-    	
-    	if (RobotMap.liftSwitch.get()) {
-    		RobotMap.gamepad.setRumble(Joystick.RumbleType.kLeftRumble, 1);
-    		RobotMap.gamepad.setRumble(Joystick.RumbleType.kRightRumble, 1);
-    	}
     }
     
     public void autoConveyorUp(int stage) {
@@ -42,8 +36,8 @@ public class ConveyorSubsystem extends Subsystem {
 	    	RobotMap.conveyorMotor2.set(1);
 	    }
 	    else if (stage == 2) {
-	    	RobotMap.conveyorMotor1.set(0.5);
-	    	RobotMap.conveyorMotor2.set(0.5);
+	    	RobotMap.conveyorMotor1.set(-0.5);
+	    	RobotMap.conveyorMotor2.set(-0.5);
 	    }
     }
     
