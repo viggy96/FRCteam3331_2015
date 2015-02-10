@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -34,4 +35,6 @@ public class RobotMap {
     public static final Talon conveyorMotor2 = new Talon(5);
     
     public static final DigitalInput liftSwitch = new DigitalInput(0);
+    
+    public static final PowerDistributionPanel pdp = new PowerDistributionPanel();
 }

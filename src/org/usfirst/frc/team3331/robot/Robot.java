@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team3331.robot.commands.autoCommandGroup;
+import org.usfirst.frc.team3331.robot.commands.autoDriveCommand;
 import org.usfirst.frc.team3331.robot.commands.teleopDriveCommand;
 import org.usfirst.frc.team3331.robot.subsystems.*;
 
@@ -34,6 +35,9 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
         autonomousCommand = new autoCommandGroup();
         teleopCommand = new teleopDriveCommand();
+        
+        //RobotMap.pdp.startLiveWindowMode();
+        //LiveWindow.addSensor("Power", "PDP", RobotMap.pdp);
     }
 	
 	public void disabledPeriodic() {
@@ -54,6 +58,7 @@ public class Robot extends IterativeRobot {
     public void teleopInit() {
         if (autonomousCommand != null) autonomousCommand.cancel();
         teleopCommand.start();
+        //LiveWindow.setEnabled(true);
     }
 
     /**
@@ -69,12 +74,13 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        //LiveWindow.run();
     }
     
     /**
      * This function is called periodically during test mode
      */
     public void testPeriodic() {
-        LiveWindow.run();
+        //LiveWindow.run();
     }
 }
