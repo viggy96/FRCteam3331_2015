@@ -38,9 +38,9 @@ public class DriveSubsystem extends Subsystem {
     	double x = RobotMap.gamepad.getRawAxis(RobotMap.leftStickX), y = RobotMap.gamepad.getRawAxis(RobotMap.leftStickY);
     	double rotation = RobotMap.gamepad.getRawAxis(RobotMap.rightStickX);
         
-    	axes[0] = Math.copySign(Math.pow(x, 2), x);
-    	axes[1] = Math.copySign(Math.pow(y, 2), y);
-    	axes[2] = Math.copySign(Math.pow(rotation,  2),  rotation); 
+    	axes[0] = Math.copySign(Math.pow(x, 3), x);
+    	axes[1] = Math.copySign(Math.pow(y, 3), y);
+    	axes[2] = Math.copySign(Math.pow(rotation,  3),  rotation); 
     	
     	return axes;
     }
