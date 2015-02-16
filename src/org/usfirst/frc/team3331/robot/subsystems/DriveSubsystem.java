@@ -29,7 +29,7 @@ public class DriveSubsystem extends Subsystem {
     
     public void teleopDrive() {
     	double axes[] = normaliseAxes();
-    	RobotMap.drivetrain.mecanumDrive_Cartesian(axes[0], axes[1], axes[2], 0);
+    	RobotMap.drivetrain.mecanumDrive_Cartesian(axes[0] * 0.6, axes[1] * 0.9, axes[2] * 0.7, 0);
     	// X, Y, rotation, gyroAngle
     }
     
