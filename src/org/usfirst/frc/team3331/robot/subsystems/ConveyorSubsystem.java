@@ -19,8 +19,8 @@ public class ConveyorSubsystem extends Subsystem {
     
     public void conveyor() {
     	if (RobotMap.gamepad.getRawAxis(2) != 0) {
-    		RobotMap.conveyorMotor1.set(RobotMap.gamepad.getRawAxis(2));
-    		RobotMap.conveyorMotor2.set(RobotMap.gamepad.getRawAxis(2));
+    		RobotMap.conveyorMotor1.set(RobotMap.gamepad.getRawAxis(2) * 0.5);
+    		RobotMap.conveyorMotor2.set(RobotMap.gamepad.getRawAxis(2) * 0.5);
     	}
     	if (RobotMap.gamepad.getRawAxis(3) != 0 ) {
     		RobotMap.conveyorMotor1.set(-RobotMap.gamepad.getRawAxis(3));
