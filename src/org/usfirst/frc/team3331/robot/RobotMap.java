@@ -22,8 +22,8 @@ public class RobotMap {
 	
 	public static final RobotDrive drivetrain = new RobotDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
     
-	public static final DoubleSolenoid solenoid1 = new DoubleSolenoid (1, 2);
-    public static final DoubleSolenoid solenoid2 = new DoubleSolenoid (3, 4);
+	public static final DoubleSolenoid solenoid1 = new DoubleSolenoid(0, 1);
+    public static final DoubleSolenoid solenoid2 = new DoubleSolenoid(2, 3);
 
     public static final Joystick gamepad = new Joystick(0);
     public static final int leftStickX = 0;

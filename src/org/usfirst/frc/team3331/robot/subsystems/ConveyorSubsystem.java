@@ -7,7 +7,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class ConveyorSubsystem extends Subsystem {
-    double limiter = 0.5;
+    double limiter = 1.0;
+    
     public void initDefaultCommand() {
     	setDefaultCommand(new conveyorCommand());
     }
