@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class ConveyorSubsystem extends Subsystem {
-    
+    double limiter = 0.5;
     public void initDefaultCommand() {
     	setDefaultCommand(new conveyorCommand());
     }
@@ -19,12 +19,12 @@ public class ConveyorSubsystem extends Subsystem {
     
     public void conveyor() {
     	if (RobotMap.gamepad.getRawAxis(2) != 0) {
-    		RobotMap.conveyorMotor1.set(RobotMap.gamepad.getRawAxis(2) * 0.5);
-    		RobotMap.conveyorMotor2.set(RobotMap.gamepad.getRawAxis(2) * 0.5);
+    		RobotMap.conveyorMotor1.set(RobotMap.gamepad.getRawAxis(2) * limiter);
+    		RobotMap.conveyorMotor2.set(RobotMap.gamepad.getRawAxis(2) * limiter);
     	}
     	if (RobotMap.gamepad.getRawAxis(3) != 0 ) {
-    		RobotMap.conveyorMotor1.set(-RobotMap.gamepad.getRawAxis(3));
-    		RobotMap.conveyorMotor2.set(-RobotMap.gamepad.getRawAxis(3));
+    		RobotMap.conveyorMotor1.set(-RobotMap.gamepad.getRawAxis(3) * limiter);
+    		RobotMap.conveyorMotor2.set(-RobotMap.gamepad.getRawAxis(3) * limiter);
     	}
     	
     	if (RobotMap.gamepad.getRawAxis(2) == 0 && RobotMap.gamepad.getRawAxis(3) == 0) init();
