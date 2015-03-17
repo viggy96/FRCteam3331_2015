@@ -13,8 +13,6 @@ public class PneumaticSubsystem extends Subsystem {
     }
     
     public void init() {
-    	RobotMap.solenoid1.set(DoubleSolenoid.Value.kOff);
-    	RobotMap.solenoid2.set(DoubleSolenoid.Value.kOff);
     	state = false;
     }
     
@@ -27,7 +25,7 @@ public class PneumaticSubsystem extends Subsystem {
     
     public void solenoidReverse() {
     	RobotMap.solenoid1.set(DoubleSolenoid.Value.kReverse);
-    	RobotMap.solenoid1.set(DoubleSolenoid.Value.kReverse);
+    	RobotMap.solenoid2.set(DoubleSolenoid.Value.kReverse);
     	state = true;
     }
     
