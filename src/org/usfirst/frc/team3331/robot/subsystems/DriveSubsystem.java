@@ -29,9 +29,12 @@ public class DriveSubsystem extends Subsystem {
     
     public void teleopDrive() {
     	double axes[] = normaliseAxes();
+    	double scaling_factor = 0.4;
     	
-    	if (Math.abs(axes[1]) < 0.0225) RobotMap.drivetrain.mecanumDrive_Cartesian(axes[0] * 0.8, 0, axes[2] * 0.3, 0);
-    	else RobotMap.drivetrain.mecanumDrive_Cartesian(axes[0] * 0.8, axes[1] * 0.3, axes[2] * 0.3, 0);
+    	if (Math.abs(axes[1]) < 0.0225) 
+    		RobotMap.drivetrain.mecanumDrive_Cartesian(axes[0] * scaling_factor, 0, axes[2] * scaling_factor, 0);
+    	else 
+    		RobotMap.drivetrain.mecanumDrive_Cartesian(axes[0] * 0.8, axes[1] * 0.25, axes[2] * scaling_factor, 0);
     	
     	// X, Y, rotation, gyroAngle
     }

@@ -33,8 +33,10 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
-        autonomousCommand = new autoCommandGroup();
+        autonomousCommand = null;
         teleopCommand = new teleopDriveCommand();
+        
+        PneumaticSubsystem.solenoidForward();
         
         //RobotMap.pdp.startLiveWindowMode();
         //LiveWindow.addSensor("Power", "PDP", RobotMap.pdp);

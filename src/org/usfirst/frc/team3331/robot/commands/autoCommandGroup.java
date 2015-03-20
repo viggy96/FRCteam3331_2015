@@ -1,6 +1,8 @@
 package org.usfirst.frc.team3331.robot.commands;
 
+
 import edu.wpi.first.wpilibj.command.CommandGroup;
+
 
 /**
  *
@@ -12,11 +14,20 @@ public class autoCommandGroup extends CommandGroup {
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
         // these will run in order.
-    	addSequential(new solenoidForwardCommand());
-    	addSequential(new solenoidReverseCommand());
-    	addSequential(new autoStartLiftCommand());
-    	addSequential(new autoFinishLiftCommand());
-    	addSequential(new autoLowerLiftCommand());
+   	
+//    	addSequential(new autoDriveCommand());
+//    	addSequential(new auto());
+//    	addSequential(new autoFinishLiftCommand());
+//    	addSequential(new autoLowerLiftCommand());
+//  	
+//    	
+//    	addSequential(new autoStartLiftCommand());
+//    	addSequential(new autoStafeLeftCommand());
+    	
+    	addSequential(new autoDriveBackwardsCommand());
+    	addSequential(new autoDriveCommand());
+    	 
+    	
     	
         // To run multiple commands at the same time,
         // use addParallel()
