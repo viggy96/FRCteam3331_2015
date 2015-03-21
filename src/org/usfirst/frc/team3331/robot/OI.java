@@ -15,8 +15,8 @@ public class OI {
 			leftButton = new JoystickButton(RobotMap.gamepad, 5);
 	
 	public OI() {
-		rightButton.whenPressed(new solenoidReverseCommand());
-		leftButton.whenPressed(new solenoidForwardCommand());
+		rightButton.whenPressed(new solenoid1Command());
+		leftButton.whenPressed(new solenoid2Command());
 	}
     // button.whenPressed(new ExampleCommand());
     // button.whileHeld(new ExampleCommand());

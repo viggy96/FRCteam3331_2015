@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class PneumaticSubsystem extends Subsystem {
     boolean state = false;
+    boolean leftState = false, rightState = false;
     
     public void initDefaultCommand() {
     	
@@ -32,6 +33,30 @@ public class PneumaticSubsystem extends Subsystem {
     public void reset() {
     	RobotMap.solenoid1.set(DoubleSolenoid.Value.kForward);
     	RobotMap.solenoid2.set(DoubleSolenoid.Value.kForward);
+    }
+    
+    public void solenoid1() {
+    	if (leftState) {
+    		RobotMap.solenoid1.set(DoubleSolenoid.Value.kForward);
+    		leftState = false;
+    	}
+    	else {
+    		RobotMap.solenoid1.set(DoubleSolenoid.Value.kReverse);
+    		leftState = true;
+    	}
+    	state = true;
+    }
+    
+    public void solenoid2() {
+    	if (rightState) {
+    		RobotMap.solenoid2.set(DoubleSolenoid.Value.kForward);
+    		rightState = false;
+    	}
+    	else {
+    		RobotMap.solenoid2.set(DoubleSolenoid.Value.kReverse);
+    		rightState = true;
+    	}
+    	state = true;
     }
     
     public boolean getState(){

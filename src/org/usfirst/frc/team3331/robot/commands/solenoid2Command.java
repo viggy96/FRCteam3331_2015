@@ -1,33 +1,36 @@
 package org.usfirst.frc.team3331.robot.commands;
 
 import org.usfirst.frc.team3331.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
-public class autoDriveCommand extends Command {
+/**
+ *
+ */
+public class solenoid2Command extends Command {
 
-    public autoDriveCommand() {
-        requires(Robot.DriveSubsystem);
+    public solenoid2Command() {
+        requires(Robot.PneumaticSubsystem);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.DriveSubsystem.init();
-    	setTimeout(0.5);
+    	Robot.PneumaticSubsystem.init();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.DriveSubsystem.autoDrive_Cartesian(0, 0.2, 0);
+    	Robot.PneumaticSubsystem.solenoid2();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return isTimedOut();
+        return Robot.PneumaticSubsystem.getState();
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.DriveSubsystem.init();
+    	Robot.PneumaticSubsystem.init();
     }
 
     // Called when another command which requires one or more of the same

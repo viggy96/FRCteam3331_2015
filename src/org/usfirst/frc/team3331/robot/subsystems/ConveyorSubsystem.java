@@ -37,8 +37,8 @@ public class ConveyorSubsystem extends Subsystem {
 	    	RobotMap.conveyorMotor2.set(1);
 	    }
 	    else if (stage == 2) {
-	    	RobotMap.conveyorMotor1.set(-0.5);
-	    	RobotMap.conveyorMotor2.set(-0.5);
+	    	RobotMap.conveyorMotor1.set(0.5);
+	    	RobotMap.conveyorMotor2.set(0.5);
 	    }
     }
     

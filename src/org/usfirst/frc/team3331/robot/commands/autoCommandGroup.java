@@ -14,19 +14,27 @@ public class autoCommandGroup extends CommandGroup {
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
         // these will run in order.
-   	
-//    	addSequential(new autoDriveCommand());
-//    	addSequential(new auto());
-//    	addSequential(new autoFinishLiftCommand());
-//    	addSequential(new autoLowerLiftCommand());
-//  	
-//    	
-//    	addSequential(new autoStartLiftCommand());
-//    	addSequential(new autoStafeLeftCommand());
+    	
+    	/*
+    	addSequential(new autoDriveCommand());
+    	addSequential(new autoStartLiftCommand());
+    	addSequential(new autoStafeLeftCommand());
+    	addSequential(new autoRotateRightCommand());
+    	addSequential(new autoDriveCommand());
+    	addSequential(new autoLowerLiftCommand());
+    	addSequential(new autoDriveBackwardsCommand());
+    	*/
+  	
+    	/*
+    	addSequential(new autoStartLiftCommand());
+    	addSequential(new autoStafeLeftCommand());
     	
     	addSequential(new autoDriveBackwardsCommand());
     	addSequential(new autoDriveCommand());
-    	 
+    	*/
+    	
+    	addSequential(new autoDriveCommand());
+    	addSequential(new autoConveyorCommand());
     	
     	
         // To run multiple commands at the same time,
